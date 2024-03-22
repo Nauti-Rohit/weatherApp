@@ -2,6 +2,7 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Alert from "@mui/material/Alert";
 import "./searchBox.css";
+import React from "react";
 
 import { useState } from "react";
 import { colors } from "@mui/material";
@@ -11,11 +12,14 @@ export default function SearchBox({ updateInfo }) {
   let [error, setError] = useState(false);
 
   const API_URL = "https://api.openweathermap.org/data/2.5/weather";
+  // const API_Key = "b5c24bad9a0f7d39f13602a37077a5f9";
 
   let getWeatherInfo = async () => {
     try {
       let response = await fetch(
-        `${API_URL}?q=${city}&appid=${process.env.API_Key}&units=metric`
+        `${API_URL}?q=${city}&appid=${
+          import.meta.env.VITE_API_KEY
+        }&units=metric`
       );
       let jsonResponse = await response.json();
       console.log(jsonResponse);
