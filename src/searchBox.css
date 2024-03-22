@@ -1,3 +1,4 @@
 .searchBox {
-  text-align: center;
+  padding: 15px;
+  border: 2px solid black;
 }
