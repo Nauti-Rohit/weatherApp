@@ -18,7 +18,7 @@ export default function WeatherApp() {
   };
   return (
     <div>
-      <h2>Weather App By Rohit Nautiyal</h2>
+
       <SearchBox updateInfo={updateInfo} />
       <InfoBox info={weatherInfo} />
     </div>
